@@ -2,10 +2,6 @@
 """Password Encryption Module"""
 import bcrypt
 
-def hash_password(password: str) -> str:
+def hash_password(password: str) -> bytes:
     """Password hashing function"""
-    encoded_pass = password.encode('utf-8')
-
-    hashed = bcrypt.hashpw(encoded_pass, bcrypt.gensalt())
-
-    return hashed
+    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
