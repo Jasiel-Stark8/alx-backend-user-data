@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Filter log module"""
+"""Filter log and Log Formatter module"""
 import logging
 import re
 from typing import List
