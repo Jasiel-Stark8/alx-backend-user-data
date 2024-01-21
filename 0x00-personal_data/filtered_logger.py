@@ -23,10 +23,12 @@ class RedactingFormatter(logging.Formatter):
     SEPARATOR = ';'
 
     def __init__(self, fields):
+        """Inherit"""
         super(RedactingFormatter, self).__init__(self.FORMAT)
         self.fields = fields
 
     def format(self, record: logging.LogRecord) -> str:
+        """Logging format function"""
         original_format = super().format(record)
         return filter_datum(self.fields,
                             self.REDACTION,
