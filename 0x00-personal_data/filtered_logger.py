@@ -14,3 +14,16 @@ def filter_datum(fields: List[str],
         message = re.sub(f'{field}=[^ {separator}]*',
                          f'{field}={redaction}', message)
     return message
+
+
+class RedactingFormatter(logging.Formatter):
+    """Redacting Formatter Class"""
+    REDACTION = '***'
+    FORMAT = '[HOLBERTON] %(levelname)s %(asctime)-15s: %(message)s'
+    SEPARATOR = ';'
+
+    def __init__(self):
+        super(RedactingFormatter, self).__init__(self.FORMAT)
+
+    def format(self, record: logging.LogRecord) -> str:
+        raise(NotImplementedError)
