@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Password Encryption Module"""
-import bycrpt
+import bcrypt
 
 def hash_password(password: str) -> str:
     """Password hashing function"""
-    return bycrpt.hashpw(password)
+    return bcrypt.hashpw(password)
