@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-'''personal data protection module
-'''
+#!/usr/bin/env python
+"""personal data protection module"""
 import re
 from typing import List
 import logging
